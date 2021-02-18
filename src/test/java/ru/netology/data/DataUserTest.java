@@ -17,17 +17,16 @@ class DataUserTest {
     private DataUserTest() {
     }
 
-    static String cityForInput() {
+    public static String cityForInput() {
         Random random = new Random();
-        int rand = random.nextInt(5);
-        String city[] = { "Калининград", "Санкт-Петербург", "Москва", "Сеул"};
+        String city[] = {"Калининград", "Санкт-Петербург", "Москва", "Воронеж"};
+        int rand = random.nextInt(city.length);
         return city[rand];
     }
-
     static String cityNoVal() {
         Random random = new Random();
         int rand = random.nextInt(3);
-        String cityNoVal[] = {"Ставрополь", "Ростов-на-Дону"};
+        String cityNoVal[] = {"Ставрополь", "Ростов-на-Дону","Сеул"};
         return cityNoVal[rand];
     }
 
@@ -45,7 +44,7 @@ class DataUserTest {
     static String dataNameWishLetterEBrief() {
         Random random = new Random();
         int rand = random.nextInt(4);
-        String nameWishEBrief[] = {"Александра", "Анастасия", "Татьяна" };
+        String nameWishEBrief[] = {"Александра", "Анастасия", "Татьяна", "Ёнхи" };
         return nameWishEBrief[rand];
     }
 
