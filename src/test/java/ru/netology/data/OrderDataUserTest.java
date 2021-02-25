@@ -19,7 +19,7 @@ class OrderDataUserTest {
     void dataInput(int days) {
         SelenideElement data = $("[data-test-id=date]");
         data.$("[value]").doubleClick().sendKeys(Keys.BACK_SPACE);
-        data.$("[placeholder]").setValue(DataUserTest.dateMeeting(days));
+        data.$("[placeholder]").setValue(DataUserTest.dataInput(days));
     }
 
     @BeforeEach
@@ -37,17 +37,17 @@ class OrderDataUserTest {
         $("[class=checkbox__box]").click();
         $$("[class=button__text]").find(exactText("Запланировать")).click();
         $("[data-test-id=success-notification]").$("[class=notification__content]")
-                .shouldHave(textCaseSensitive("Встреча успешно запланирована на " + DataUserTest.dateMeeting(inDays)));
+                .shouldHave(textCaseSensitive("Встреча успешно запланирована на " + DataUserTest.dataInput(inDays)));
         $$("[class=button__text]").find(exactText("Запланировать")).click();
         $$("[class=button__text]").find(exactText("Перепланировать")).click();
         $("[data-test-id=success-notification]").$("[class=notification__content]")
-                .shouldHave(textCaseSensitive("Встреча успешно запланирована на " + DataUserTest.dateMeeting(inDays)));
+                .shouldHave(textCaseSensitive("Встреча успешно запланирована на " + DataUserTest.dataInput(inDays)));
     }
 
     @Test
     void errorExpectedWhenInputIncorrectCity() {
         $("[placeholder=Город]").setValue(DataUserTest.cityNoVal());
-        int inDays = 5;
+        int inDays = 1;
         dataInput(inDays);
         $("[data-test-id=phone]").$("[name=phone]").setValue(DataUserTest.dataPhone());
         $("[data-test-id=name].input_type_text .input__control").setValue(DataUserTest.dataName());
@@ -80,10 +80,10 @@ class OrderDataUserTest {
         $("[class=checkbox__box]").click();
         $$("[class=button__text]").find(exactText("Запланировать")).click();
         $("[data-test-id=success-notification]").$("[class=notification__content]")
-                .shouldHave(textCaseSensitive("Встреча успешно запланирована на " + DataUserTest.dateMeeting(inDays)));
+                .shouldHave(textCaseSensitive("Встреча успешно запланирована на " + DataUserTest.dataInput(inDays)));
         $$("[class=button__text]").find(exactText("Запланировать")).click();
         $$("[class=button__text]").find(exactText("Перепланировать")).click();
         $("[data-test-id=success-notification]").$("[class=notification__content]")
-                .shouldHave(textCaseSensitive("Встреча успешно запланирована на " + DataUserTest.dateMeeting(inDays)));
+                .shouldHave(textCaseSensitive("Встреча успешно запланирована на " + DataUserTest.dataInput(inDays)));
     }
 }

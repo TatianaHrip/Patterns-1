@@ -26,7 +26,7 @@ class DataUserTest {
     static String cityNoVal() {
         Random random = new Random();
         int rand = random.nextInt(3);
-        String cityNoVal[] = {"Ставрополь", "Ростов-на-Дону","Сеул"};
+        String cityNoVal[] = {"Сеул"};
         return cityNoVal[rand];
     }
 
@@ -43,14 +43,14 @@ class DataUserTest {
 
     static String dataNameWishLetterEBrief() {
         Random random = new Random();
-        int rand = random.nextInt(4);
-        String nameWishEBrief[] = {"Александра", "Анастасия", "Татьяна", "Ёнхи" };
+        int rand = random.nextInt(1);
+        String nameWishEBrief[] = { "Ёнхи" };
         return nameWishEBrief[rand];
     }
 
-    static String dateMeeting(int days) {
-        String dateMeeting = LocalDate.now().plusDays(17).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
-        return dateMeeting;
+    static String dataInput(int days) {
+        String dataInput = LocalDate.now().plusDays(17).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+        return dataInput;
     }
 
 }
