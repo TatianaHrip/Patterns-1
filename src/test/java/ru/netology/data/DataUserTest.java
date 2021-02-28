@@ -20,13 +20,13 @@ class DataUserTest {
     public static String cityForInput() {
         Random random = new Random();
         String city[] = {"Калининград", "Санкт-Петербург", "Москва", "Воронеж"};
-        int rand = random.nextInt(city.length);
+        int rand = random.nextInt(3);
         return city[rand];
     }
     static String cityNoVal() {
         Random random = new Random();
         int rand = random.nextInt(3);
-        String cityNoVal[] = {"Сеул"};
+        String cityNoVal[] = {"Сеул", "Банког", "Париж", "Гусу Лань"};
         return cityNoVal[rand];
     }
 
@@ -44,7 +44,7 @@ class DataUserTest {
     static String dataNameWishLetterEBrief() {
         Random random = new Random();
         int rand = random.nextInt(1);
-        String nameWishEBrief[] = { "Ёнхи" };
+        String nameWishEBrief[] = { "Ёнхи", "Лёша", "Ёнджун", "Доён"};
         return nameWishEBrief[rand];
     }
 
