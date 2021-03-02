@@ -12,39 +12,27 @@ import java.util.Random;
 
 
 class DataUserTest {
+    private static Random random = new Random();
     static Faker faker = new Faker(new Locale("ru"));
 
     private DataUserTest() {
     }
 
     public static String cityForInput() {
-        Random random = new Random();
         String city[] = {"Калининград", "Санкт-Петербург", "Москва", "Воронеж"};
-        int rand = random.nextInt(3);
+        int rand = random.nextInt(city.length);
         return city[rand];
     }
+
     static String cityNoVal() {
-        Random random = new Random();
-        int rand = random.nextInt(3);
         String cityNoVal[] = {"Сеул", "Банког", "Париж", "Гусу Лань"};
+        int rand = random.nextInt(cityNoVal.length);
         return cityNoVal[rand];
     }
 
-    static String dataPhone() {
-        String phone = faker.phoneNumber().phoneNumber();
-        return phone;
-    }
-
-    static String dataName() {
-        String name = faker.name().lastName();
-        name = name + " " + faker.name().firstName();
-        return name;
-    }
-
     static String dataNameWishLetterEBrief() {
-        Random random = new Random();
-        int rand = random.nextInt(1);
-        String nameWishEBrief[] = { "Ёнхи", "Лёша", "Ёнджун", "Доён"};
+        String nameWishEBrief[] = {"Ёнхи", "Лёша", "Ёнджун", "Доён"};
+        int rand = random.nextInt(nameWishEBrief.length);
         return nameWishEBrief[rand];
     }
 
