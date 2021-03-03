@@ -30,6 +30,17 @@ class DataUserTest {
         return cityNoVal[rand];
     }
 
+    static String dataPhone() {
+        String phone = faker.phoneNumber().phoneNumber();
+        return phone;
+    }
+
+    static String dataName() {
+        String name = faker.name().lastName();
+        name = name + " " + faker.name().firstName();
+        return name;
+    }
+
     static String dataNameWishLetterEBrief() {
         String nameWishEBrief[] = {"Ёнхи", "Лёша", "Ёнджун", "Доён"};
         int rand = random.nextInt(nameWishEBrief.length);
